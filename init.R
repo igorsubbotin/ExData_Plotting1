@@ -1,0 +1,1 @@
+setwd("d:\\#Cloud\\Dropbox\\Projects\\Courses\\data_science\\exdata_plotting1\\")
