@@ -20,12 +20,12 @@ data = data[data$Date >= startDate & data$Date <= endDate,
             c("DateTime", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity",
               "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")]
 
-# draw plot 3
+# draw plot 3 directly to "plot3.png"
+png(file = "plot3.png", bg = "transparent", width = 480, height = 480)
+par(mfrow = c(1, 1))
 plot(data$DateTime, data$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
 lines(data$DateTime, data$Sub_metering_2, col = "red")
 lines(data$DateTime, data$Sub_metering_3, col = "blue")
-legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-
-# save plot to "plot3.png"
-dev.copy(png, file = "plot3.png", width = 800)
+legend("topright", lty = 1, col = c("black", "red", "blue"), 
+       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()

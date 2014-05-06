@@ -17,11 +17,11 @@ data$Date = as.Date(data$Date, "%d/%m/%Y")
 startDate <- as.Date("2007-02-01", "%Y-%m-%d")
 endDate <- as.Date("2007-02-02", "%Y-%m-%d")
 data = data[data$Date >= startDate & data$Date <= endDate,
-            c("DateTime", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity")]
+            c("DateTime", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity",
+              "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")]
 
-# draw plot 2
+# draw plot 2 directly to "plot2.png"
+png(file = "plot2.png", bg = "transparent", width = 480, height = 480)
+par(mfrow = c(1, 1))
 plot(data$DateTime, data$Global_active_power, type="l", xlab = "", ylab = "Global Active Power (kilowatts)")
-
-# save plot to "plot2.png"
-dev.copy(png, file = "plot2.png")
 dev.off()
