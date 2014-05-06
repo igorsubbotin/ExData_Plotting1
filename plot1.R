@@ -22,6 +22,6 @@ data = data[data$Date >= startDate & data$Date <= endDate,
 # draw plot 1
 hist(data$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
 
-# save plot to "plot1.pdf"
+# save plot to "plot1.png"
 dev.copy(png, file = "plot1.png")
 dev.off()

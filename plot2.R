@@ -22,6 +22,6 @@ data = data[data$Date >= startDate & data$Date <= endDate,
 # draw plot 2
 plot(data$DateTime, data$Global_active_power, type="l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
-# save plot to "plot2.pdf"
+# save plot to "plot2.png"
 dev.copy(png, file = "plot2.png")
 dev.off()
